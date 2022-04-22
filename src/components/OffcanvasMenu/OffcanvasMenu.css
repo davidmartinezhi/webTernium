@@ -1,0 +1,36 @@
+.nav-ternium{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.nav-header-ternium{
+    display: flex;
+    overflow: visible; 
+    flex-direction: row;
+}
+
+.button-ternium{
+    background-color: white;
+    color: black;
+    border-color: white;
+}
+.button-ternium:hover{
+    background-color: orange;
+    color: white;
+    border-color: white;
+}
+
+.button-ternium:focus{
+    background-color: orange;
+    color: white;
+    border-color: white;    
+}
+
+a.nav-link{
+    color: gray;
+}
+
+a.nav-link.active{
+    color: orange !important;
+}
