@@ -1,5 +1,5 @@
 import React from 'react'
-import {Navbar, Row, Col} from 'react-bootstrap'
+import {Navbar, Col} from 'react-bootstrap'
 import OffcanvasMenu from '../OffcanvasMenu';
 
 export default function NavBar() {
@@ -7,7 +7,7 @@ export default function NavBar() {
   return (
     <Navbar className="navbar-ternium">
             <Col md={1}>
-                <OffcanvasMenu />
+                <OffcanvasMenu/>
             </Col>
             <Col md={9}></Col>
             <Col md={2}>
