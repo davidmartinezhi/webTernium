@@ -5,7 +5,7 @@ import OffcanvasMenu from '../OffcanvasMenu';
 export default function NavBar() {
 
   return (
-    <Navbar className="navbar-ternium">
+    <Navbar className="navbar-ternium" expand="md">
             <Col md={1}>
                 <OffcanvasMenu/>
             </Col>

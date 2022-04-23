@@ -14,8 +14,8 @@ export default function OffcanvasMenu() {
   console.log(display);
   return (
     <>
-      <Button className="button-ternium" onClick={handleShow}>
-        <FontAwesomeIcon icon={faBars} />
+      <Button className="button-ternium" onClick={handleShow} prefix={<FontAwesomeIcon icon={faBars} />}>
+        Menu
       </Button>
 
       <Offcanvas show={show} onHide={handleClose} backdrop={false} >

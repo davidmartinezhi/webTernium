@@ -13,8 +13,8 @@ export default function OffcanvasMenu() {
 
   return (
     <>
-      <Button className="button-ternium" onClick={handleShow}>
-        <FontAwesomeIcon icon={faBars} />
+      <Button className="button-ternium" size="md" onClick={handleShow}>
+      <FontAwesomeIcon icon={faBars} />
       </Button>
 
       <Offcanvas show={show} onHide={handleClose} backdrop={false}>
@@ -28,7 +28,7 @@ export default function OffcanvasMenu() {
           ) : elementsToShow == 2 ? (
             <Filters />
           ) : (
-            <h1>Adios</h1>
+            <h1>Analísis</h1>
           )}
         </Offcanvas.Body>
       </Offcanvas>
@@ -66,11 +66,11 @@ function Menu({ callback, elementsToShow }) {
 function Areas() {
   return (
     <ListGroup variant="flush">
-      <ListGroup.Item>Area 1</ListGroup.Item>
-      <ListGroup.Item>Area 2</ListGroup.Item>
-      <ListGroup.Item>Area 3</ListGroup.Item>
-      <ListGroup.Item>Area 4</ListGroup.Item>
-      <ListGroup.Item>Area 5</ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Area 1")}>Area 1</ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Area 2")}>Area 2</ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Area 3")}>Area 3</ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Area 4")}>Area 4</ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Area 5")}>Area 5</ListGroup.Item>
     </ListGroup>
   );
 }
@@ -78,8 +78,8 @@ function Areas() {
 function Filters() {
   return (
     <ListGroup variant="flush">
-      <ListGroup.Item>3 Colores</ListGroup.Item>
-      <ListGroup.Item>5 Colores</ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Colores 3")}>3 Colores</ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Colores 5")}>5 Colores</ListGroup.Item>
     </ListGroup>
   );
 }
