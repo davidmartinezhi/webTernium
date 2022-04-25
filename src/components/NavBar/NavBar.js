@@ -1,19 +1,15 @@
 import React from 'react'
 import {Navbar, Col} from 'react-bootstrap'
-import OffcanvasMenu from '../OffcanvasMenu';
+import OffcanvasMenu from "../OffcanvasMenu";
 
 export default function NavBar() {
-
   return (
     <Navbar className="navbar-ternium" expand="md">
-            <Col md={1}>
-                <OffcanvasMenu/>
-            </Col>
-            <Col md={9}></Col>
-            <Col md={2}>
-                Alert
-            </Col>
-
+      <Col md={1}>
+        <OffcanvasMenu />
+      </Col>
+      <Col md={9}></Col>
+      <Col md={2}>Alert</Col>
     </Navbar>
-  )
+  );
 }

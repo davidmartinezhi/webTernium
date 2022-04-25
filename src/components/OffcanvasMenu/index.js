@@ -14,7 +14,7 @@ export default function OffcanvasMenu() {
   return (
     <>
       <Button className="button-ternium" size="md" onClick={handleShow}>
-      <FontAwesomeIcon icon={faBars} />
+        <FontAwesomeIcon icon={faBars} />
       </Button>
 
       <Offcanvas show={show} onHide={handleClose} backdrop={false}>
@@ -66,11 +66,30 @@ function Menu({ callback, elementsToShow }) {
 function Areas() {
   return (
     <ListGroup variant="flush">
-      <ListGroup.Item action onClick={() => console.log("Area 1")}>Area 1</ListGroup.Item>
-      <ListGroup.Item action onClick={() => console.log("Area 2")}>Area 2</ListGroup.Item>
-      <ListGroup.Item action onClick={() => console.log("Area 3")}>Area 3</ListGroup.Item>
-      <ListGroup.Item action onClick={() => console.log("Area 4")}>Area 4</ListGroup.Item>
-      <ListGroup.Item action onClick={() => console.log("Area 5")}>Area 5</ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Area 1")}>
+        Area 1
+      </ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Area 2")}>
+        Area 2
+      </ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Area 3")}>
+        Area 3
+      </ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Area 4")}>
+        Area 4
+      </ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Area 5")}>
+        Area 5
+      </ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Area 6")}>
+        Area 6
+      </ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Area 7")}>
+        Area 7
+      </ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Area 8")}>
+        Area 8
+      </ListGroup.Item>
     </ListGroup>
   );
 }
@@ -78,8 +97,12 @@ function Areas() {
 function Filters() {
   return (
     <ListGroup variant="flush">
-      <ListGroup.Item action onClick={() => console.log("Colores 3")}>3 Colores</ListGroup.Item>
-      <ListGroup.Item action onClick={() => console.log("Colores 5")}>5 Colores</ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Colores 3")}>
+        3 Colores
+      </ListGroup.Item>
+      <ListGroup.Item action onClick={() => console.log("Colores 5")}>
+        5 Colores
+      </ListGroup.Item>
     </ListGroup>
   );
 }
