@@ -1,3 +1,8 @@
 .navbar-ternium{
     background-color: transparent;
 }
+
+.navbar-col{
+    display: flex;
+    justify-content: center;
+}

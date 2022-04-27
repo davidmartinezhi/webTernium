@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Offcanvas, Button, Nav, ListGroup } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { UnityContext } from "react-unity-webgl";
 import "./OffcanvasMenu.css";
 
 export default function OffcanvasMenu() {
@@ -10,7 +11,9 @@ export default function OffcanvasMenu() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+/* 
+UnityInstance.SendMessage("JSHandler", "SetArea", area);
+*/
   return (
     <>
       <Button className="button-ternium" size="md" onClick={handleShow}>
@@ -64,30 +67,35 @@ function Menu({ callback, elementsToShow }) {
 }
 
 function Areas() {
+
+    const unityMessage = (area) => {
+        UnityContext.send("JSHandler", "SetArea", area);
+    }
+
   return (
     <ListGroup variant="flush">
-      <ListGroup.Item action onClick={() => console.log("Area 1")}>
+      <ListGroup.Item action onClick={() => unityMessage("Area1")}>
         Area 1
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => console.log("Area 2")}>
+      <ListGroup.Item action onClick={() => unityMessage("Area2")}>
         Area 2
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => console.log("Area 3")}>
+      <ListGroup.Item action onClick={() => unityMessage("Area3")}>
         Area 3
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => console.log("Area 4")}>
+      <ListGroup.Item action onClick={() => unityMessage("Area4")}>
         Area 4
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => console.log("Area 5")}>
+      <ListGroup.Item action onClick={() => unityMessage("Area5")}>
         Area 5
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => console.log("Area 6")}>
+      <ListGroup.Item action onClick={() => unityMessage("Area6")}>
         Area 6
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => console.log("Area 7")}>
+      <ListGroup.Item action onClick={() => unityMessage("Area7")}>
         Area 7
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => console.log("Area 8")}>
+      <ListGroup.Item action onClick={() => unityMessage("Area8")}>
         Area 8
       </ListGroup.Item>
     </ListGroup>
@@ -95,12 +103,16 @@ function Areas() {
 }
 
 function Filters() {
+    const unityMessage = (filter) => {
+        UnityContext.send("JSHandler", "RecibeWeb", filter);
+    }
+
   return (
     <ListGroup variant="flush">
-      <ListGroup.Item action onClick={() => console.log("Colores 3")}>
+      <ListGroup.Item action onClick={() => unityMessage("3")}>
         3 Colores
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => console.log("Colores 5")}>
+      <ListGroup.Item action onClick={() => unityMessage("5")}>
         5 Colores
       </ListGroup.Item>
     </ListGroup>

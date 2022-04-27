@@ -1,7 +1,6 @@
 .nav-ternium{
     display: flex;
     flex-direction: row;
-
 }
 
 .nav-header-ternium{
@@ -52,6 +51,7 @@ a.nav-link.active{
 }
 
 .list-group-item-action{
+
     display: flex;
     align-items: center;
     justify-content: center;
