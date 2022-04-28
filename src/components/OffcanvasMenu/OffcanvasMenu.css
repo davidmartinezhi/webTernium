@@ -16,6 +16,11 @@
     width: 80px;
     box-shadow: 1px 1px 1px 1px rgb(110, 110, 110);
 }
+
+.btn-primary:focus, .btn-primary:active, .btn-primary:hover{
+    color: white;
+}
+
 .button-ternium:hover{
     background-color: orange;
     color: white;

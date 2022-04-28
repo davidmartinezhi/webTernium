@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import { Offcanvas, Button, Nav, ListGroup } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { UnityContext } from "react-unity-webgl";
 import "./OffcanvasMenu.css";
 
-export default function OffcanvasMenu() {
+export default function OffcanvasMenu(props) {
+  const {filterController} = props;
   const [show, setShow] = useState(true);
   const [elementsToShow, setElementsToShow] = useState(1);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-/* 
-UnityInstance.SendMessage("JSHandler", "SetArea", area);
-*/
+    /*
+    UnityInstance.SendMessage("JSHandler", "SetArea", area);
+    */
   return (
     <>
       <Button className="button-ternium" size="md" onClick={handleShow}>
@@ -26,10 +26,10 @@ UnityInstance.SendMessage("JSHandler", "SetArea", area);
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Menu callback={setElementsToShow} />
-          {elementsToShow == 1 ? (
+          {elementsToShow === "1" ? (
             <Areas />
-          ) : elementsToShow == 2 ? (
-            <Filters />
+          ) : elementsToShow === "2" ? (
+            <Filters filterController={filterController}/>
           ) : (
             <h1>Analísis</h1>
           )}
@@ -67,10 +67,9 @@ function Menu({ callback, elementsToShow }) {
 }
 
 function Areas() {
-
-    const unityMessage = (area) => {
-        UnityContext.send("JSHandler", "SetArea", area);
-    }
+  const unityMessage = (area) => {
+    console.log(area);
+  };
 
   return (
     <ListGroup variant="flush">
@@ -102,17 +101,15 @@ function Areas() {
   );
 }
 
-function Filters() {
-    const unityMessage = (filter) => {
-        UnityContext.send("JSHandler", "RecibeWeb", filter);
-    }
+function Filters(props) {
+    const {filterController} = props;
 
   return (
     <ListGroup variant="flush">
-      <ListGroup.Item action onClick={() => unityMessage("3")}>
+      <ListGroup.Item action onClick={() => filterController(3)}>
         3 Colores
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => unityMessage("5")}>
+      <ListGroup.Item action onClick={() => filterController(5)}>
         5 Colores
       </ListGroup.Item>
     </ListGroup>

@@ -4,11 +4,14 @@ import OffcanvasMenu from "../OffcanvasMenu";
 
 import './NavBar.css';
 
-export default function NavBar() {
+export default function NavBar(props) {
+
+  const {filterController} = props;
+
   return (
     <Navbar className="navbar-ternium" expand="md">
       <Col md={1} className="navbar-col">
-        <OffcanvasMenu />
+        <OffcanvasMenu filterController={filterController} />
       </Col>
       <Col md={9} className="navbar-col"></Col>
       <Col md={2} className="navbar-col">Alert</Col>
