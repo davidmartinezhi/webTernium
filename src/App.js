@@ -12,40 +12,26 @@ const unityContext = new UnityContext({
 });
 
 function App() {
-
-  
-  const [activeFilter, setActiveFilter] = useState(3);
-
   //Change Filters On Heatmap
   const unityFilterController = (filter) => {
-    if(filter === 3){
-      setActiveFilter(3);
-    }
-    else{
-      setActiveFilter(5);
-    }
-    unityContext.send("JSHandler", "RecibeWeb", activeFilter);
+    unityContext.send("JSHandler", "RecibeWeb", filter);
     console.log("Unity filter controller...");
   };
-
-  useEffect( () => {
-    unityContext.on(activeFilter === 3 || activeFilter === 5, () => {
-      unityContext.send("JSHandler", "Recibeweb", activeFilter);
-    })
-  },[activeFilter])
-
 
   //Change areas on heatmap
   const unityAreaController = (area) => {
     console.log(area);
     //unityContext.send("JSHandler", "RecibeWeb", area);
-  };  
-
+  };
 
   return (
     <>
       <div className="header">
-        <NavBar filterController={unityFilterController}/>
+        <NavBar filterController={unityFilterController} />
+      </div>
+
+      <div className="alerts-sider">
+        
       </div>
 
       <div className="content">
