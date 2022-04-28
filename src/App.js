@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Unity, { UnityContext } from "react-unity-webgl";
 import NavBar from "./components/NavBar";
+import Sider from "./components/Sider";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
@@ -30,9 +31,7 @@ function App() {
         <NavBar filterController={unityFilterController} />
       </div>
 
-      <div className="alerts-sider">
-        
-      </div>
+
 
       <div className="content">
         <Unity

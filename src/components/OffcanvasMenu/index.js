@@ -5,19 +5,20 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./OffcanvasMenu.css";
 
 export default function OffcanvasMenu(props) {
-  const {filterController} = props;
+  const { filterController } = props;
   const [show, setShow] = useState(true);
   const [elementsToShow, setElementsToShow] = useState(1);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-    /*
+  /*
     UnityInstance.SendMessage("JSHandler", "SetArea", area);
     */
   return (
     <>
       <Button className="button-ternium" size="md" onClick={handleShow}>
         <FontAwesomeIcon icon={faBars} />
+        <span>Menú</span>
       </Button>
 
       <Offcanvas show={show} onHide={handleClose} backdrop={false}>
@@ -29,7 +30,7 @@ export default function OffcanvasMenu(props) {
           {elementsToShow === "1" ? (
             <Areas />
           ) : elementsToShow === "2" ? (
-            <Filters filterController={filterController}/>
+            <Filters filterController={filterController} />
           ) : (
             <h1>Analísis</h1>
           )}
@@ -43,7 +44,7 @@ function Menu({ callback, elementsToShow }) {
   return (
     <>
       <Nav
-        className="nav-ternium"
+        className="nav-ternium flex-row"
         justify
         variant="tabs"
         activeKey={elementsToShow}
@@ -102,7 +103,7 @@ function Areas() {
 }
 
 function Filters(props) {
-    const {filterController} = props;
+  const { filterController } = props;
 
   return (
     <ListGroup variant="flush">
