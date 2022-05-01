@@ -13,6 +13,9 @@ const unityContext = new UnityContext({
 });
 
 function App() {
+
+  const [alert, setAlert] = useState(null);
+
   //Change Filters On Heatmap
   const unityFilterController = (filter) => {
     unityContext.send("JSHandler", "RecibeWeb", filter);
@@ -25,6 +28,14 @@ function App() {
     //unityContext.send("JSHandler", "RecibeWeb", area);
   };
 
+  //Alert detection
+  useEffect( () => {
+    unityContext.on("SendAlert", (unityAlert) => {
+      console.log(unityAlert);
+      setAlert(unityAlert);
+    })
+  }, []);
+
   return (
     <>
       <div className="header">
@@ -35,6 +46,7 @@ function App() {
         <Unity
           unityContext={unityContext}
           style={{
+            color: "rgba(255, 255, 255, 0.10)",
             position: "fixed",
             height: "100vh",
             width: "100%",

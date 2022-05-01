@@ -24,7 +24,7 @@ export default function OffcanvasMenu(props) {
 
       <Offcanvas style={{borderRadius: " 0px 10px 10px 0px" }} show={show} onHide={handleClose} backdrop={false}>
         <Offcanvas.Header closeButton className="nav-header-ternium">
-          <Offcanvas.Title><img src={logo} className="logo-ternium" alt="Ternium logo"/></Offcanvas.Title>
+          <Offcanvas.Title ><img src={logo} className="logo-ternium" alt="Ternium logo"/></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Menu callback={setElementsToShow} />
