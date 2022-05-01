@@ -72,3 +72,7 @@ a.nav-link.active{
 .logo-ternium{
     height: 50px;
 }
+
+.nav-item{
+    font-size: large;
+}

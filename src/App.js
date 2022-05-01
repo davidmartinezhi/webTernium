@@ -41,7 +41,6 @@ function App() {
             overflow: "hidden",
             margin: "0 auto",
             display: "flex",
-            color: "black"
           }}
         />
       </div>
