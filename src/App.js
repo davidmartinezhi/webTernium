@@ -6,10 +6,10 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
 const unityContext = new UnityContext({
-  loaderUrl: "../unity/app.loader.js",
-  dataUrl: "../unity/app.data",
-  frameworkUrl: "../unity/app.framework.js",
-  codeUrl: "../unity/app.wasm",
+  loaderUrl: "../unity/intento2Mouse.loader.js",
+  dataUrl: "../unity/intento2Mouse.data",
+  frameworkUrl: "../unity/intento2Mouse.framework.js",
+  codeUrl: "../unity/intento2Mouse.wasm",
 });
 
 function App() {
@@ -31,8 +31,6 @@ function App() {
         <NavBar filterController={unityFilterController} />
       </div>
 
-
-
       <div className="content">
         <Unity
           unityContext={unityContext}
@@ -43,6 +41,7 @@ function App() {
             overflow: "hidden",
             margin: "0 auto",
             display: "flex",
+            color: "black"
           }}
         />
       </div>

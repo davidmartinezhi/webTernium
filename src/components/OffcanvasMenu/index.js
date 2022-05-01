@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Offcanvas, Button, Nav, ListGroup } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import logo from '../../assets/img/png/Ternium_Logo.svg.png'
 import "./OffcanvasMenu.css";
 
 export default function OffcanvasMenu(props) {
@@ -16,20 +17,20 @@ export default function OffcanvasMenu(props) {
     */
   return (
     <>
-      <Button className="button-ternium" size="md" onClick={handleShow}>
+      <Button className="button-ternium" size="lg" onClick={handleShow}>
         <FontAwesomeIcon icon={faBars} />
         <span>Menú</span>
       </Button>
 
       <Offcanvas show={show} onHide={handleClose} backdrop={false}>
         <Offcanvas.Header closeButton className="nav-header-ternium">
-          <Offcanvas.Title>Ternium</Offcanvas.Title>
+          <Offcanvas.Title><img src={logo} className="logo-ternium" alt="Ternium logo"/></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Menu callback={setElementsToShow} />
-          {elementsToShow === "1" ? (
+          {elementsToShow == "1" ? (
             <Areas />
-          ) : elementsToShow === "2" ? (
+          ) : elementsToShow == "2" ? (
             <Filters filterController={filterController} />
           ) : (
             <h1>Analísis</h1>
