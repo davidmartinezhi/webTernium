@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Unity, { UnityContext } from "react-unity-webgl";
 import NavBar from "./components/NavBar";
+import Modal from "./components/Modal";
 import Sider from "./components/Sider";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
@@ -13,8 +14,8 @@ const unityContext = new UnityContext({
 });
 
 function App() {
-
-  const [alert, setAlert] = useState(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const [alert, setAlert] = useState({});
 
   //Change Filters On Heatmap
   const unityFilterController = (filter) => {
@@ -29,11 +30,13 @@ function App() {
   };
 
   //Alert detection
-  useEffect( () => {
+  useEffect(() => {
     unityContext.on("SendAlert", (unityAlert) => {
       console.log(unityAlert);
-      setAlert(unityAlert);
+      setAlert({unityAlert});
+      setIsVisible(true);
     })
+    setAlert({});
   }, []);
 
   return (
@@ -41,7 +44,6 @@ function App() {
       <div className="header">
         <NavBar filterController={unityFilterController} />
       </div>
-
       <div className="content">
         <Unity
           unityContext={unityContext}
@@ -55,6 +57,7 @@ function App() {
             display: "flex",
           }}
         />
+        <Modal alert={alert} setIsVisible={setIsVisible} isVisible={isVisible} />
       </div>
     </>
   );
