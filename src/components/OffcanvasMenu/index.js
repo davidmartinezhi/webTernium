@@ -17,9 +17,9 @@ export default function OffcanvasMenu(props) {
     */
   return (
     <>
-      <Button className="button-ternium" size="lg" onClick={handleShow}>
+      <Button className="button-ternium" size="md" onClick={handleShow}>
         <FontAwesomeIcon icon={faBars} />
-        <span>Menú</span>
+        <span>  Abrir Menú  </span>
       </Button>
 
       <Offcanvas style={{borderRadius: " 0px 10px 10px 0px" }} show={show} onHide={handleClose} backdrop={false}>

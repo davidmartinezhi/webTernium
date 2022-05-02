@@ -10,22 +10,22 @@
     display: flex;
     background-color: white !important;
     color: black;
-    border-color: white !important;
+    border-color: transparent !important;
     box-shadow: 1px 1px 1px 1px rgb(110, 110, 110) !important;
 }
 
 span{
-    color: gray !important;
+    color: rgb(151, 151, 151) !important;
     margin-left: 10px;
 }
 
 .btn-primary:focus, .btn-primary:active, .btn-primary:hover{
-    color: rgb(233, 233, 233) !important;
+    color: rgb(151, 151, 151) !important;
 
 }
 
 .fa-bars{
-    color: gray;
+    color: rgb(151, 151, 151) !important;
 }
 
 .button-ternium:hover{
