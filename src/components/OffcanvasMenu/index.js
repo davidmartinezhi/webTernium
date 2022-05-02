@@ -74,6 +74,7 @@ function Areas() {
   };
 
   return (
+    <>
     <ListGroup variant="flush">
       <ListGroup.Item action onClick={() => unityMessage("Area1")}>
         Area 1
@@ -100,6 +101,12 @@ function Areas() {
         Area 8
       </ListGroup.Item>
     </ListGroup>
+    <ListGroup className="crear-area" >
+    <ListGroup.Item className="crear-area-item" action onClick={() => console.log("Crear filtro")}>
+      Añadir Area
+    </ListGroup.Item>
+    </ListGroup>
+    </>
   );
 }
 
@@ -119,7 +126,7 @@ function Filters(props) {
 
     <ListGroup className="crear-filtro" >
     <ListGroup.Item className="crear-filtro-item" action onClick={() => console.log("Crear filtro")}>
-      Crear Filtro
+      Añadir Filtro
     </ListGroup.Item>
     </ListGroup>
     </>

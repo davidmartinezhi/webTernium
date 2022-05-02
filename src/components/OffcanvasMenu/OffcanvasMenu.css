@@ -84,5 +84,15 @@ a.nav-link.active{
 }
 
 .crear-filtro-item{
-    background-color: lightgray;
+    background-color: rgb(221, 221, 221) !important;
+}
+
+.crear-area{
+    display: flex;
+    height: 15%;
+    justify-content: end !important;
+}
+
+.crear-area-item{
+    background-color: rgb(221, 221, 221) !important;
 }
