@@ -6,3 +6,9 @@
     display: flex;
     justify-content: center;
 }
+
+.fa-bell{
+    color: lightgray;
+    height: 30px;
+    background-color: white;
+}
