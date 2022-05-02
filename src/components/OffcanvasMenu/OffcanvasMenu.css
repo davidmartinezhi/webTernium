@@ -73,6 +73,16 @@ a.nav-link.active{
     height: 50px;
 }
 
-.nav-item{
+.nav-item-ternium{
     font-size: large;
+}
+
+.crear-filtro{
+    display: flex;
+    height: 70%;
+    justify-content: end !important;
+}
+
+.crear-filtro-item{
+    background-color: lightgray;
 }

@@ -49,7 +49,7 @@ function Menu({ callback, elementsToShow }) {
         justify
         variant="tabs"
         activeKey={elementsToShow}
-        defaultActiveKey={1}
+        defaultActiveKey={elementsToShow}
         onSelect={(selectedKey) => {
           callback(selectedKey);
         }}
@@ -107,6 +107,7 @@ function Filters(props) {
   const { filterController } = props;
 
   return (
+    <>
     <ListGroup variant="flush">
       <ListGroup.Item action onClick={() => filterController(3)}>
         3 Colores
@@ -115,5 +116,12 @@ function Filters(props) {
         5 Colores
       </ListGroup.Item>
     </ListGroup>
+
+    <ListGroup className="crear-filtro" >
+    <ListGroup.Item className="crear-filtro-item" action onClick={() => console.log("Crear filtro")}>
+      Crear Filtro
+    </ListGroup.Item>
+    </ListGroup>
+    </>
   );
 }

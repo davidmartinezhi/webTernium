@@ -19,7 +19,7 @@ function App() {
 
   //Change Filters On Heatmap
   const unityFilterController = (filter) => {
-    unityContext.send("JSHandler", "RecibeWeb", filter);
+    unityContext.send("JS_Handler", "RecibeWeb", filter);
     console.log("Unity filter controller...");
   };
 
