@@ -80,7 +80,7 @@ a.nav-link.active{
 .crear-filtro{
     display: flex;
     height: 70%;
-    justify-content: end !important;
+    justify-content: flex-end;
 }
 
 .crear-filtro-item{
@@ -90,7 +90,7 @@ a.nav-link.active{
 .crear-area{
     display: flex;
     height: 15%;
-    justify-content: end !important;
+    justify-content: flex-end;
 }
 
 .crear-area-item{
