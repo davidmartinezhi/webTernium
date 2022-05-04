@@ -13,7 +13,7 @@ export default function ModalAlert(props) {
         <BootstrapModal.Header closeButton>
           <BootstrapModal.Title> <FontAwesomeIcon style={{color:"red"}} icon={faCircleExclamation} /> Alerta de Contingencia</BootstrapModal.Title>
         </BootstrapModal.Header>
-        <BootstrapModal.Body>En el area: --- </BootstrapModal.Body>
+        <BootstrapModal.Body>En el area: { area } </BootstrapModal.Body>
         <BootstrapModal.Footer>
           <Button variant="warning" onClick={() => setIsVisible(false)}>
             Entendido

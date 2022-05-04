@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Offcanvas, Button, Nav, ListGroup } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import ModalAlert from "../ModalAlert";
 import logo from '../../assets/img/png/Ternium_Logo.svg.png'
 import "./OffcanvasMenu.css";
 
