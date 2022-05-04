@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { Offcanvas, Button, Nav, ListGroup } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import ModalAlert from "../ModalAlert";
 import logo from '../../assets/img/png/Ternium_Logo.svg.png'
 import "./OffcanvasMenu.css";
 
 export default function OffcanvasMenu(props) {
-  const { filterController } = props;
+  const { filterController, unityAreaController, deployAnimation } = props;
   const [show, setShow] = useState(true);
   const [elementsToShow, setElementsToShow] = useState(1);
 
@@ -29,11 +30,11 @@ export default function OffcanvasMenu(props) {
         <Offcanvas.Body>
           <Menu callback={setElementsToShow} />
           {elementsToShow == "1" ? (
-            <Areas />
+            <Areas unityAreaController={unityAreaController}/>
           ) : elementsToShow == "2" ? (
             <Filters filterController={filterController} />
           ) : (
-            <h1>Analísis</h1>
+            <Analyze deployAnimation={deployAnimation} />
           )}
         </Offcanvas.Body>
       </Offcanvas>
@@ -68,36 +69,34 @@ function Menu({ callback, elementsToShow }) {
   );
 }
 
-function Areas() {
-  const unityMessage = (area) => {
-    console.log(area);
-  };
+function Areas(props) {
+  const {unityAreaController} = props;
 
   return (
     <>
     <ListGroup variant="flush">
-      <ListGroup.Item action onClick={() => unityMessage("Area1")}>
+      <ListGroup.Item action onClick={() => unityAreaController("Area1")}>
         Area 1
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => unityMessage("Area2")}>
+      <ListGroup.Item action onClick={() => unityAreaController("Area2")}>
         Area 2
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => unityMessage("Area3")}>
+      <ListGroup.Item action onClick={() => unityAreaController("Area3")}>
         Area 3
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => unityMessage("Area4")}>
+      <ListGroup.Item action onClick={() => unityAreaController("Area4")}>
         Area 4
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => unityMessage("Area5")}>
+      <ListGroup.Item action onClick={() => unityAreaController("Area5")}>
         Area 5
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => unityMessage("Area6")}>
+      <ListGroup.Item action onClick={() => unityAreaController("Area6")}>
         Area 6
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => unityMessage("Area7")}>
+      <ListGroup.Item action onClick={() => unityAreaController("Area7")}>
         Area 7
       </ListGroup.Item>
-      <ListGroup.Item action onClick={() => unityMessage("Area8")}>
+      <ListGroup.Item action onClick={() => unityAreaController("Area8")}>
         Area 8
       </ListGroup.Item>
     </ListGroup>
@@ -130,5 +129,17 @@ function Filters(props) {
     </ListGroup.Item>
     </ListGroup>
     </>
+  );
+}
+
+function Analyze(props) {
+  const { deployAnimation } = props;
+
+  return (
+    <ListGroup variant="flush">
+      <ListGroup.Item action onClick={() => deployAnimation()}>
+        Animaciones
+      </ListGroup.Item>
+    </ListGroup>
   );
 }

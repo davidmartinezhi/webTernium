@@ -9,18 +9,18 @@
 .button-ternium{
     display: flex;
     background-color: white !important;
-    color: black;
+    color: rgb(41, 41, 41);
     border-color: transparent !important;
     box-shadow: 1px 1px 1px 1px rgb(110, 110, 110) !important;
 }
 
 span{
-    color: rgb(151, 151, 151) !important;
+    color: black !important;
     margin-left: 10px;
 }
 
 .btn-primary:focus, .btn-primary:active, .btn-primary:hover{
-    color: rgb(151, 151, 151) !important;
+    color: white !important;
 
 }
 
